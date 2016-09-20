@@ -8,17 +8,21 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *detailScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *lighthouseImageView;
 
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.detailScrollView.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,14 +30,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:NO];
+    
+    UIImageView *detailImageView = [[UIImageView alloc] initWithImage:self.image];
+    
+    detailImageView.clipsToBounds = YES;
+    
+    [self.detailScrollView addSubview:detailImageView];
+    
+    self.detailScrollView.minimumZoomScale = 0.5;
+    self.detailScrollView.maximumZoomScale = 4;
+    
+    self.detailScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.lighthouseImageView.frame), CGRectGetHeight(self.lighthouseImageView.frame));
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    
+    return self.lighthouseImageView;
+}
 
 @end

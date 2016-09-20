@@ -19,7 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-Bw-KTe">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lighthouse" translatesAutoresizingMaskIntoConstraints="NO" id="bma-dY-3dq">
+                                        <rect key="frame" x="-263" y="-567" width="900" height="1800"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.36944863109999998" green="1" blue="0.28614649199999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerX" secondItem="TNf-Bw-KTe" secondAttribute="centerX" id="Bh1-cc-iLv"/>
+                                    <constraint firstAttribute="trailing" secondItem="bma-dY-3dq" secondAttribute="trailing" id="Uha-ty-lVz"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="leading" secondItem="TNf-Bw-KTe" secondAttribute="leading" id="bPR-2K-bTg"/>
+                                    <constraint firstAttribute="bottom" secondItem="bma-dY-3dq" secondAttribute="bottom" id="hDQ-do-CEW"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="top" secondItem="TNf-Bw-KTe" secondAttribute="top" id="jeQ-ci-0eP"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerY" secondItem="TNf-Bw-KTe" secondAttribute="centerY" id="oMQ-c3-MmI"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="mh2-4Q-SSd" id="kYO-Mj-EW3"/>
                                 </connections>
@@ -35,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="detailScrollView" destination="TNf-Bw-KTe" id="FYX-1c-vQJ"/>
+                        <outlet property="lighthouseImageView" destination="bma-dY-3dq" id="Ark-NC-59X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQh-h4-Gl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,4 +102,7 @@
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lighthouse" width="900" height="1800"/>
+    </resources>
 </document>
