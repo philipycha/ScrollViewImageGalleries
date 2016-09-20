@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mh2-4Q-SSd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="xwR-rQ-4fc">
+            <objects>
+                <viewController id="mh2-4Q-SSd" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1t7-KH-dnW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ynk-cF-oye"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wDw-tx-6uL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-Bw-KTe">
+                                <color key="backgroundColor" red="0.36944863109999998" green="1" blue="0.28614649199999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mh2-4Q-SSd" id="kYO-Mj-EW3"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TNf-Bw-KTe" firstAttribute="leading" secondItem="wDw-tx-6uL" secondAttribute="leading" id="RqP-LB-6NM"/>
+                            <constraint firstAttribute="trailing" secondItem="TNf-Bw-KTe" secondAttribute="trailing" id="ayX-IL-neC"/>
+                            <constraint firstItem="Ynk-cF-oye" firstAttribute="top" secondItem="TNf-Bw-KTe" secondAttribute="bottom" id="ivn-hI-9tD"/>
+                            <constraint firstItem="TNf-Bw-KTe" firstAttribute="top" secondItem="wDw-tx-6uL" secondAttribute="top" id="s6h-s9-MrY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailScrollView" destination="TNf-Bw-KTe" id="FYX-1c-vQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQh-h4-Gl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="139"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,28 +53,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-EL-RbV">
-                                <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bU2-1p-6MW"/>
-                                </connections>
-                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8w1-oK-Pp0">
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-EL-RbV">
+                                        <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="bU2-1p-6MW"/>
+                                        </connections>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Biq-EL-RbV" firstAttribute="top" secondItem="8w1-oK-Pp0" secondAttribute="top" id="PTh-qH-bW0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Biq-EL-RbV" secondAttribute="trailing" id="SJ2-3D-pVJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Biq-EL-RbV" secondAttribute="bottom" id="c1K-pj-Q3r"/>
+                                    <constraint firstItem="Biq-EL-RbV" firstAttribute="leading" secondItem="8w1-oK-Pp0" secondAttribute="leading" id="h0e-dD-sIU"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Biq-EL-RbV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ECk-P9-7Cr"/>
-                            <constraint firstItem="Biq-EL-RbV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Fpz-IB-r5h"/>
-                            <constraint firstItem="Biq-EL-RbV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Qr1-PG-VUE"/>
-                            <constraint firstItem="Biq-EL-RbV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="uHe-RZ-5i9"/>
+                            <constraint firstItem="8w1-oK-Pp0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0j9-TC-3Ne"/>
+                            <constraint firstAttribute="trailing" secondItem="8w1-oK-Pp0" secondAttribute="trailing" id="DU4-UP-rKd"/>
+                            <constraint firstItem="8w1-oK-Pp0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cM6-n3-BAn"/>
+                            <constraint firstItem="8w1-oK-Pp0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fwF-Vl-ods"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8Ve-L4-43V"/>
                     <connections>
                         <outlet property="galleryScrollView" destination="Biq-EL-RbV" id="iXc-M0-Aib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

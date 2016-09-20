@@ -11,8 +11,9 @@
 @interface ViewController () 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *galleryScrollView;
-
-@property (nonatomic) UIImageView *lighthouseImageView;
+@property (strong, nonatomic) UIImageView *imageView1;
+@property (strong, nonatomic) UIImageView *imageView2;
+@property (strong, nonatomic) UIImageView *imageView3;
 
 @end
 
@@ -160,10 +161,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 
