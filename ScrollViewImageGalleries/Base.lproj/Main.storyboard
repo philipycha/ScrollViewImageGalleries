@@ -19,10 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-EL-RbV">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="QdY-Lh-scg"/>
-                                    <constraint firstAttribute="height" constant="667" id="ddZ-RN-Eeo"/>
-                                </constraints>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="bU2-1p-6MW"/>
                                 </connections>
@@ -30,8 +27,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Biq-EL-RbV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bcE-gx-gFG"/>
-                            <constraint firstItem="Biq-EL-RbV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iDk-rh-bHt"/>
+                            <constraint firstItem="Biq-EL-RbV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ECk-P9-7Cr"/>
+                            <constraint firstItem="Biq-EL-RbV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Fpz-IB-r5h"/>
+                            <constraint firstItem="Biq-EL-RbV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Qr1-PG-VUE"/>
+                            <constraint firstItem="Biq-EL-RbV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="uHe-RZ-5i9"/>
                         </constraints>
                     </view>
                     <connections>

@@ -11,58 +11,159 @@
 @interface ViewController () 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *galleryScrollView;
-@property (strong, nonatomic, readonly) NSArray<UIImage *> *lighthouseImages;
 
-@property (strong, nonatomic) UIImageView *lighthouseImageView;
+@property (nonatomic) UIImageView *lighthouseImageView;
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
-}
+    
+    UIImageView *imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Lighthouse-night"]];
+    
+    imageView1.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    imageView1.userInteractionEnabled = YES;
+    
+    [self.galleryScrollView addSubview:imageView1];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView1
+                                                                attribute:NSLayoutAttributeTop
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeTop
+                                                               multiplier:1.0
+                                                                 constant:0.0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView1
+                                                                attribute:NSLayoutAttributeLeft
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeLeft
+                                                               multiplier:1.0
+                                                                 constant:0.0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView1
+                                                                attribute:NSLayoutAttributeWidth
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeWidth
+                                                               multiplier:1.0
+                                                                 constant:0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView1
+                                                                attribute:NSLayoutAttributeHeight
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeHeight
+                                                               multiplier:1.0
+                                                                 constant:0]];
+    
+    
+    UIImageView *imageView2 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Lighthouse"]];
+    
+    imageView2.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    imageView2.userInteractionEnabled = YES;
+    
+    [self.galleryScrollView addSubview:imageView2];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView2
+                                                                attribute:NSLayoutAttributeTop
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeTop
+                                                               multiplier:1.0
+                                                                 constant:0.0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView2
+                                                                attribute:NSLayoutAttributeLeft
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:imageView1
+                                                                attribute:NSLayoutAttributeRight
+                                                               multiplier:1.0
+                                                                 constant:0.0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView2
+                                                                attribute:NSLayoutAttributeWidth
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeWidth
+                                                               multiplier:1.0
+                                                                 constant:0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView2
+                                                                attribute:NSLayoutAttributeHeight
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeHeight
+                                                               multiplier:1.0
+                                                                 constant:0]];
+    
+    
+    
+    
+    UIImageView *imageView3 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Lighthouse-in-Field"]];
+    
+    imageView3.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    imageView3.userInteractionEnabled = YES;
+    
+    [self.galleryScrollView addSubview:imageView3];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView3
+                                                                attribute:NSLayoutAttributeTop
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeTop
+                                                               multiplier:1.0
+                                                                 constant:0.0]];
+    
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView3
+                                                                attribute:NSLayoutAttributeLeft
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:imageView2
+                                                                attribute:NSLayoutAttributeRight
+                                                               multiplier:1.0
+                                                                 constant:0.0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView3
+                                                                attribute:NSLayoutAttributeWidth
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeWidth
+                                                               multiplier:1.0
+                                                                 constant:0]];
+    
+    [self.galleryScrollView addConstraint:[NSLayoutConstraint constraintWithItem:imageView3
+                                                                attribute:NSLayoutAttributeHeight
+                                                                relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self.galleryScrollView
+                                                                attribute:NSLayoutAttributeHeight
+                                                               multiplier:1.0
+                                                                 constant:0]];
+    
+    
+    imageView1.contentMode = UIViewContentModeScaleAspectFit;
+    imageView2.contentMode = UIViewContentModeScaleAspectFit;
+    imageView3.contentMode = UIViewContentModeScaleAspectFit;
+    
+   self.galleryScrollView.contentSize = CGSizeMake(self.galleryScrollView.frame.size.width * 3, self.galleryScrollView.frame.size.height);
+    self.galleryScrollView.pagingEnabled = YES;
 
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)setupPagingImages {
-    
-    CGFloat imageXPosition = 0;
-    
-    CGFloat scrollViewWidth = CGRectGetWidth(self.galleryScrollView.frame);
-    CGFloat scrollViewHeight = CGRectGetHeight(self.galleryScrollView.frame);
-    
-    for (UIImage *lighthouseImages in self.lighthouseImages) {
-        
-        UIImageView *lighthouseImageView = [[UIImageView alloc] initWithImage:lighthouseImages];
-        
-        lighthouseImageView.frame = CGRectMake(imageXPosition, 0, scrollViewWidth, scrollViewHeight);
-        lighthouseImageView.contentMode = UIViewContentModeScaleAspectFit;
-        
-        [self.galleryScrollView addSubview:lighthouseImageView];
-        
-        imageXPosition += scrollViewWidth;
-    }
-    
-    self.galleryScrollView.contentSize = CGSizeMake(scrollViewHeight, scrollViewWidth* self.lighthouseImages.count);
-    
-    self.galleryScrollView.pagingEnabled = YES;
-    
-}
-
-- (NSArray<UIImage *> *)lighthouseImages {
-    return @[
-             [UIImage imageNamed:@"Lighthouse"],
-             [UIImage imageNamed:@"Lighthouse-in-Field"],
-             [UIImage imageNamed:@":ighthouse-night"],
-             ];
-}
-
 
 
 
