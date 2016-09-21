@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIImageView *imageView1;
 @property (strong, nonatomic) UIImageView *imageView2;
 @property (strong, nonatomic) UIImageView *imageView3;
+@property (weak, nonatomic) IBOutlet UIPageControl *imagePageControl;
 
 @end
 
@@ -24,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+     self.galleryScrollView.pagingEnabled = YES;
+ 
     // Do any additional setup after loading the view, typically from a nib.
     
     self.imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Lighthouse-night"]];
@@ -172,6 +175,11 @@
     [self.imageView3 addGestureRecognizer:tapImage3];
  
     
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    int pageNumber = self.galleryScrollView.contentOffset.x / self.galleryScrollView.frame.size.width;
+    self.imagePageControl.currentPage = pageNumber;
 }
 
 - (void)tapImage:(UITapGestureRecognizer *)sender {

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,16 +20,19 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-Bw-KTe">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bma-dY-3dq"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bma-dY-3dq">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="651" placeholder="YES" id="Qtw-kT-vKo"/>
+                                            <constraint firstAttribute="width" constant="358" placeholder="YES" id="fLq-qj-fEu"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.36944863109999998" green="1" blue="0.28614649199999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="top" secondItem="TNf-Bw-KTe" secondAttribute="topMargin" id="0fA-wA-f7U"/>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="leading" secondItem="TNf-Bw-KTe" secondAttribute="leadingMargin" id="LRf-XY-uu1"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="bma-dY-3dq" secondAttribute="trailing" id="Pwr-Qz-M6w"/>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerY" secondItem="TNf-Bw-KTe" secondAttribute="centerY" id="VNN-sh-8aT"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="bma-dY-3dq" secondAttribute="bottom" id="Ze5-UZ-NkX"/>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerX" secondItem="TNf-Bw-KTe" secondAttribute="centerX" id="ghl-Cb-mSW"/>
+                                    <constraint firstAttribute="trailing" secondItem="bma-dY-3dq" secondAttribute="trailing" constant="9" id="8Ie-Wg-Aht"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="top" secondItem="TNf-Bw-KTe" secondAttribute="top" id="8mN-iI-QnW"/>
+                                    <constraint firstAttribute="bottom" secondItem="bma-dY-3dq" secondAttribute="bottom" id="DDf-xP-D6e"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="leading" secondItem="TNf-Bw-KTe" secondAttribute="leading" constant="8" id="UXZ-5D-Pk7"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="mh2-4Q-SSd" id="kYO-Mj-EW3"/>
@@ -76,24 +78,28 @@
                                     </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Biq-EL-RbV" firstAttribute="top" secondItem="8w1-oK-Pp0" secondAttribute="top" id="PTh-qH-bW0"/>
-                                    <constraint firstAttribute="trailing" secondItem="Biq-EL-RbV" secondAttribute="trailing" id="SJ2-3D-pVJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="Biq-EL-RbV" secondAttribute="bottom" id="c1K-pj-Q3r"/>
-                                    <constraint firstItem="Biq-EL-RbV" firstAttribute="leading" secondItem="8w1-oK-Pp0" secondAttribute="leading" id="h0e-dD-sIU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Biq-EL-RbV" secondAttribute="bottom" id="0ul-MG-7SB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Biq-EL-RbV" secondAttribute="trailing" id="6zb-cJ-fu3"/>
+                                    <constraint firstItem="Biq-EL-RbV" firstAttribute="leading" secondItem="8w1-oK-Pp0" secondAttribute="leading" id="onF-ob-KY2"/>
+                                    <constraint firstItem="Biq-EL-RbV" firstAttribute="top" secondItem="8w1-oK-Pp0" secondAttribute="top" id="vtZ-4S-Wnr"/>
                                 </constraints>
                             </stackView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="DQz-uy-SV1"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8w1-oK-Pp0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0j9-TC-3Ne"/>
                             <constraint firstAttribute="trailing" secondItem="8w1-oK-Pp0" secondAttribute="trailing" id="DU4-UP-rKd"/>
                             <constraint firstItem="8w1-oK-Pp0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cM6-n3-BAn"/>
+                            <constraint firstItem="DQz-uy-SV1" firstAttribute="centerX" secondItem="8w1-oK-Pp0" secondAttribute="centerX" id="cuG-7Z-2pQ"/>
                             <constraint firstItem="8w1-oK-Pp0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fwF-Vl-ods"/>
+                            <constraint firstItem="DQz-uy-SV1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="342" id="jRj-Bo-UjR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Ve-L4-43V"/>
                     <connections>
                         <outlet property="galleryScrollView" destination="Biq-EL-RbV" id="iXc-M0-Aib"/>
+                        <outlet property="imagePageControl" destination="DQz-uy-SV1" id="mbE-WE-C5e"/>
                         <segue destination="mh2-4Q-SSd" kind="show" identifier="toDetailVC" id="hQS-1J-Kcq"/>
                     </connections>
                 </viewController>

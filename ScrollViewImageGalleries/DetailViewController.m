@@ -11,7 +11,7 @@
 @interface DetailViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *detailScrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *lighthouseImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *lighthouseImageView;
 
 @end
 
@@ -34,18 +34,22 @@
     
     [super viewDidAppear:NO];
     
-    UIImageView *detailImageView = [[UIImageView alloc] initWithImage:self.image];
+    [self.lighthouseImageView setImage:self.image];
     
-    detailImageView.clipsToBounds = YES;
+    self.lighthouseImageView.clipsToBounds = YES;
     
-    [self.detailScrollView addSubview:detailImageView];
+   // [self.detailScrollView addSubview:self.lighthouseImageView];
     
     self.detailScrollView.minimumZoomScale = 0.25;
-    self.detailScrollView.maximumZoomScale = 4;
+    self.detailScrollView.maximumZoomScale = 4.0;
     
-    self.detailScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.lighthouseImageView.frame), CGRectGetHeight(self.lighthouseImageView.frame));
+ //   self.lighthouseImageView.center = self.detailScrollView.center;
+   
+//    self.detailScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.lighthouseImageView.frame), CGRectGetHeight(self.lighthouseImageView.frame));
 
 }
+
+
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     
