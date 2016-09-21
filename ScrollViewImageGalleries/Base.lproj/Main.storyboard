@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mh2-4Q-SSd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D3x-Rp-o4i">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail View Controller-->
+        <!--detailViewController-->
         <scene sceneID="xwR-rQ-4fc">
             <objects>
-                <viewController id="mh2-4Q-SSd" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewController" title="detailViewController" id="mh2-4Q-SSd" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1t7-KH-dnW"/>
                         <viewControllerLayoutGuide type="bottom" id="Ynk-cF-oye"/>
@@ -20,18 +21,16 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-Bw-KTe">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lighthouse" translatesAutoresizingMaskIntoConstraints="NO" id="bma-dY-3dq">
-                                        <rect key="frame" x="-263" y="-567" width="900" height="1800"/>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bma-dY-3dq"/>
                                 </subviews>
                                 <color key="backgroundColor" red="0.36944863109999998" green="1" blue="0.28614649199999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerX" secondItem="TNf-Bw-KTe" secondAttribute="centerX" id="Bh1-cc-iLv"/>
-                                    <constraint firstAttribute="trailing" secondItem="bma-dY-3dq" secondAttribute="trailing" id="Uha-ty-lVz"/>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="leading" secondItem="TNf-Bw-KTe" secondAttribute="leading" id="bPR-2K-bTg"/>
-                                    <constraint firstAttribute="bottom" secondItem="bma-dY-3dq" secondAttribute="bottom" id="hDQ-do-CEW"/>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="top" secondItem="TNf-Bw-KTe" secondAttribute="top" id="jeQ-ci-0eP"/>
-                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerY" secondItem="TNf-Bw-KTe" secondAttribute="centerY" id="oMQ-c3-MmI"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="top" secondItem="TNf-Bw-KTe" secondAttribute="topMargin" id="0fA-wA-f7U"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="leading" secondItem="TNf-Bw-KTe" secondAttribute="leadingMargin" id="LRf-XY-uu1"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="bma-dY-3dq" secondAttribute="trailing" id="Pwr-Qz-M6w"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerY" secondItem="TNf-Bw-KTe" secondAttribute="centerY" id="VNN-sh-8aT"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="bma-dY-3dq" secondAttribute="bottom" id="Ze5-UZ-NkX"/>
+                                    <constraint firstItem="bma-dY-3dq" firstAttribute="centerX" secondItem="TNf-Bw-KTe" secondAttribute="centerX" id="ghl-Cb-mSW"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="mh2-4Q-SSd" id="kYO-Mj-EW3"/>
@@ -53,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQh-h4-Gl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="139"/>
+            <point key="canvasLocation" x="1636" y="139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -95,14 +94,30 @@
                     <navigationItem key="navigationItem" id="8Ve-L4-43V"/>
                     <connections>
                         <outlet property="galleryScrollView" destination="Biq-EL-RbV" id="iXc-M0-Aib"/>
+                        <segue destination="mh2-4Q-SSd" kind="show" identifier="toDetailVC" id="hQS-1J-Kcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="929" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="len-Vt-jbh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D3x-Rp-o4i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5nZ-2F-mDs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lss-iA-WbS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DD0-J0-C2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Lighthouse" width="900" height="1800"/>
-    </resources>
 </document>

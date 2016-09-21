@@ -40,7 +40,7 @@
     
     [self.detailScrollView addSubview:detailImageView];
     
-    self.detailScrollView.minimumZoomScale = 0.5;
+    self.detailScrollView.minimumZoomScale = 0.25;
     self.detailScrollView.maximumZoomScale = 4;
     
     self.detailScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.lighthouseImageView.frame), CGRectGetHeight(self.lighthouseImageView.frame));
